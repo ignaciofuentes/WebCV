@@ -1,0 +1,78 @@
+﻿body
+{
+    background-color: #808080;
+    font-family: "Franklin Gothic Book";
+    text-align: justify;
+    font-size: 10.5pt;
+}
+
+table
+{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+td
+{
+    vertical-align: top;
+    min-width: 200px;
+}
+
+.container
+{
+    background-color: #ffffff;
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+    .container div
+    {
+        width: 760px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+        .container div.row
+        {
+            margin-top: 50px;
+        }
+
+.colon
+{
+    padding-right: 20px;
+}
+
+.company
+{
+    font-weight: bold;
+}
+
+.heading
+{
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 12pt;
+    margin-bottom:25px;
+    padding: 4px;
+    font-weight: bold;
+    font-family: "Century Gothic";
+}
+
+.name
+{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 20pt;
+    font-family: "Carbonated Gothic";
+    font-weight: bold;
+}
+
+.timeframe
+{
+    float: right;
+}
