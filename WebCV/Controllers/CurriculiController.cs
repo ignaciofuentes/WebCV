@@ -27,7 +27,7 @@ namespace WebCV.Controllers
                     new ExperienceItem{
                         CompanyName ="Viitru",
                         Location= "Caracas, Miranda. Venezuela.",
-                        Timeframe ="April 2011-Present",
+                        Timeframe ="April 2011 - Present",
                         JobDescription="It is my responsibility to do the necessary research (followed by training my coworkers) on the technologies "+
                                         "we use to build our application. As a software architect I made the important choices of developing using the "+
                                         "Microsoft stack with the addition of many open source .net products. Specifically, ASP.NET MVC and WEB API, MS SQL Server, "+
@@ -38,7 +38,7 @@ namespace WebCV.Controllers
                     },
                     new ExperienceItem{
                         CompanyName ="TuColegionline",
-                        Location= "Caracas, Miranda, Venezuela.",
+                        Location= "Caracas, Miranda. Venezuela.",
                         Timeframe ="March 2010 – April 2011",
                         JobDescription="A partner and I co-founded TuColegionline.com which is a school management system targeting Venezuelan schools. My role was to build the software from a backend perspective. We developed it using Ruby on Rails and many ruby oriented open source projects. This company has now been renamed to Akdemia since my leaving.",
                         JobTitle="Co-Founder/Developer"
