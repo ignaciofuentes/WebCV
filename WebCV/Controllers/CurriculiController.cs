@@ -28,7 +28,7 @@ namespace WebCV.Controllers
                         CompanyName ="Viitru Colombia",
                         Location= "Bogotá, DF. Colombia.",
                         Timeframe ="October 2012 - Present",
-                        JobDescription="Added to the responsibilities I maintain as the software architect, I am responsible for providing input on the technical aspect of every major decision of the company. As we are currently shifting the focus of the company to the development of mobile apps, I am in charge of selecting the tools our different teams will use (although most technical decisions are made as a team, I hold the final word in cases of discrepancies). Proper training of our staff, high quality standards and meeting deadlines for our projects are all part of my review criteria as CTO. ",
+                        JobDescription="Added to the responsibilities I maintain as the software architect, I am responsible for providing input on the technical aspect of every major company decision. As we are currently shifting the focus of the company to the development of mobile apps, I am in charge of selecting the tools our different teams will use (although most technical decisions are made as a team, I hold the final word in cases of discrepancies). Proper training of our staff, high quality standards and meeting deadlines for our projects are all part of my review criteria as CTO.",
                         JobTitle="Software Architect"
                     },
                     new ExperienceItem{
