@@ -18,16 +18,23 @@ namespace WebCV.Controllers
                 BasicInfoItems = new SerializableDictionary {
                     {"Place of Birth", "Caracas, Venezuela"},
                     {"Language", "Spanish (native), English"},
-                    {"Address", "Urb. Oripoto, calle Caripe, qta. Neblina, Caracas, Venezuela."},
-                    {"Home-Phone", "+582129612773"},
-                    {"Mobile-Phone", "+584141735611"},
+                    {"Address", "Carrera 16 #94-14 Bogotá, Colombia."},
+                    {"Home-Phone", "+5714611427 "},
+                    {"Mobile-Phone", "+573102603473 "},
                     {"E-Mail", "nacho10f@gmail.com"}
                 },
                 ExperienceItems = new List<ExperienceItem> { 
+                     new ExperienceItem{
+                        CompanyName ="Viitru Colombia",
+                        Location= "Bogotá, DF. Colombia.",
+                        Timeframe ="October 2012 - Present",
+                        JobDescription="Added to the responsibilities I maintain as the software architect, I am responsible for providing input on the technical aspect of every major decision of the company. As we are currently shifting the focus of the company to the development of mobile apps, I am in charge of selecting the tools our different teams will use (although most technical decisions are made as a team, I hold the final word in cases of discrepancies). Proper training of our staff, high quality standards and meeting deadlines for our projects are all part of my review criteria as CTO. ",
+                        JobTitle="Software Architect"
+                    },
                     new ExperienceItem{
                         CompanyName ="Viitru",
                         Location= "Caracas, Miranda. Venezuela.",
-                        Timeframe ="April 2011 - Present",
+                        Timeframe ="April 2011 - October 2012",
                         JobDescription="It is my responsibility to do the necessary research (followed by training my coworkers) on the technologies "+
                                         "we use to build our application. As a software architect I made the important choices of developing using the "+
                                         "Microsoft stack with the addition of many open source .net products. Specifically, ASP.NET MVC and WEB API, MS SQL Server, "+
