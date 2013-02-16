@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Web.Http;
 using WebCV.Models;
 
@@ -12,13 +13,13 @@ namespace WebCV.Controllers
     {
         public Curriculum Get()
         {
-            return new Curriculum
+            var cv = new Curriculum
             {
-                Name = "Ignacio Andrés Fuentes",
+                Name = "Ignacio Fuentes",
                 BasicInfoItems = new SerializableDictionary {
                     {"Place of Birth", "Caracas, Venezuela"},
                     {"Language", "Spanish (native), English"},
-                    {"Address", "Carrera 16 #94-14 Bogotá, Colombia."},
+                    {"Address", "Carrera 16 #94-14, Bogotá, Cundinamarca, Colombia."},
                     {"Home-Phone", "+5714611427 "},
                     {"Mobile-Phone", "+573102603473 "},
                     {"E-Mail", "nacho10f@gmail.com"}
@@ -29,7 +30,7 @@ namespace WebCV.Controllers
                         Location= "Bogotá, DF. Colombia.",
                         Timeframe ="October 2012 - Present",
                         JobDescription="Added to the responsibilities I maintain as the software architect, I am responsible for providing input on the technical aspect of every major company decision. As we are currently shifting the focus of the company to the development of mobile apps, I am in charge of selecting the tools our different teams will use (although most technical decisions are made as a team, I hold the final word in cases of discrepancies). Proper training of our staff, high quality standards and meeting deadlines for our projects are all part of my review criteria as CTO.",
-                        JobTitle="Software Architect"
+                        JobTitle="CTO"
                     },
                     new ExperienceItem{
                         CompanyName ="Viitru",
@@ -60,8 +61,8 @@ namespace WebCV.Controllers
 
 
                 },
-                EduactionItems = new SerializableDictionary { 
-                    {"University", "Systems Engineering. Universidad Metropolitana (2005-2011), Caracas, Venezuela."}
+                EducationItems = new List<EducationItem>() { 
+                    new EducationItem{Institution ="Universidad Metropolitana", StartYear=2005, EndYear=2011, Location="Caracas, Venezuela", Degree="Systems Engineering"}
                 },
                 SkillsParagraphs = new ParagraphList { 
                     "In web software development it is paramount to keep track of several types of technologies to actually be able to build complete and compelling software. This includes both front-end and back-end technologies. Throughout the last few years, I have developed experience with a myriad of .Net back-end technologies such as ASP.NET MVC, ASP.NET WEB API (Rest, HTTP), C#, Entity Framework, Linq-To-Sql, SQL Server 2008, AutoMapper, Ninject, MSTest, NUnit and Specflow. I have also had the chance to work with several open source back-end technologies like Ruby-On-Rails, Active Record, RSpec, Cucumber, PHP, CodeIgniter, MySQL and PostgreSQL. Added to this, I have developed moderate experience using several front-end technologies, including but not limited to HTML5, Javascript, CSS, jQuery, Knockout.JS, Backbone.JS, JSRender, Twitter Bootsrap and jQuery UI.",
@@ -72,6 +73,29 @@ namespace WebCV.Controllers
                 }
 
             };
+            cv.Gravatar = GetImageSource(cv.BasicInfoItems["E-Mail"]);
+            return cv;
         }
+
+        public string GetImageSource(string email)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(email.Trim()))
+                throw new ArgumentException("The email is empty.", "email");
+
+            var imageUrl = "http://www.gravatar.com/avatar/";
+            var encoder = new System.Text.UTF8Encoding();
+            var md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            var hashedBytes = md5.ComputeHash(encoder.GetBytes(email.ToLower()));
+            var sb = new System.Text.StringBuilder(hashedBytes.Length * 2);
+
+            for (var i = 0; i < hashedBytes.Length; i++)
+                sb.Append(hashedBytes[i].ToString("X2"));
+
+            imageUrl += sb.ToString().ToLower();
+
+
+            return imageUrl;
+        }
+
     }
 }

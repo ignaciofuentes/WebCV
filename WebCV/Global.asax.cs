@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace WebCV
 {
@@ -19,6 +20,9 @@ namespace WebCV
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var config = GlobalConfiguration.Configuration;
+            config.Formatters.Insert(0, new JsonpMediaTypeFormatter());
         }
     }
 }

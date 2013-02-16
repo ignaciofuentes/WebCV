@@ -24,8 +24,20 @@ $(function () {
 
             };
         });
-        var educationItems = $.map($xml.find("EduactionItems Item"), function (element) {
-            return { key: $(element).find("Key").text(), value: $(element).find("Value").text() };
+        var educationItems = $.map($xml.find("EducationItems EducationItem"), function (element) {
+            var $element = $(element);
+            return {
+                //must fix this
+                degree: $element.find("Degree").text(),
+                institution: $element.find("Institution").text(),
+                startYear: $element.find("StartYear").text(),
+                endYear: $element.find("EndYear").text(),
+                location: $element.find("Location").text(),
+                //to use this
+                key: $element.find("Degree").text(),
+                value: $element.find("Institution").text()
+
+            };
         });
         var skillsParagraphs = $.map($xml.find("SkillsParagraphs Paragraph"), function (element) {
             return { value: $(element).text() };

@@ -4,12 +4,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using WebCV.Controllers;
 
 namespace WebCV.Models
 {
     [DataContract]
     public class Curriculum
     {
+       
         [DataMember(Order = 0)]
         public string Name { get; set; }
         [DataMember(Order = 1)]
@@ -17,9 +19,11 @@ namespace WebCV.Models
         [DataMember(Order = 2)]
         public IEnumerable<ExperienceItem> ExperienceItems { get; set; }
         [DataMember(Order = 3)]
-        public SerializableDictionary EduactionItems { get; set; }
+        public List<EducationItem> EducationItems { get; set; }
         [DataMember(Order = 4)]
         public ParagraphList SkillsParagraphs { get; set; }
+        [DataMember(Order=5)]
+        public string Gravatar { get; set; }
 
     }
 
